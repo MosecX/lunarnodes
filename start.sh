@@ -38,36 +38,17 @@ echo "#                                  LunarNodes - Panel VPS"
 echo "#"
 echo "#######################################################################################"
 echo ""
-echo "* [0] Debian"
 echo "* [1] Ubuntu"
-echo "* [2] Alpine"
 
-read -p "Ingrese al sistema operativo (0-3): " input
+read -p "Ingrese al sistema operativo 1: " input
 
 case $input in
-
-    0)
-    wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.xz \
-    "https://github.com/termux/proot-distro/releases/download/v4.7.0/debian-bullseye-${ARCH}-pd-v4.7.0.tar.xz"
-    apt download xz-utils
-    deb_file=$(find $ROOTFS_DIR -name "*.deb" -type f)
-    dpkg -x $deb_file ~/.local/
-    rm "$deb_file"
-    
-    tar -xJf /tmp/rootfs.tar.xz -C $ROOTFS_DIR --strip-components=1;;
 
     1)
     wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
     "http://dxomg.is-the-love-of-my.life/u/9S29Ig.gz"
 
-    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR;;
-
-    2)
-    wget --tries=$max_retries --timeout=$timeout -O /tmp/rootfs.tar.gz \
-    "https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-minirootfs-3.19.1-${ARCH}.tar.gz"
-
-    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR;;
-
+    tar -xf /tmp/rootfs.tar.gz -C $ROOTFS_DIR
 
 esac
 
@@ -167,10 +148,6 @@ display_footer() {
 	echo -e "${BOLD_MAGENTA}___________________________________________________${RESET_COLOR}"
 	echo -e ""
     echo -e "           ${YELLOW}-----> LA VPS SE HA INICIADO <----${RESET_COLOR}"
-
-  apt install -y curl 
-  curl -o /bin/systemctl https://raw.githubusercontent.com/gdraheim/docker-systemctl-replacement/master/files/docker/systemctl3.py
-  chmod +x /bin/systemctl
 }
 
 # Main script execution
