@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/sh\r\ncd \/mnt\/server\r\n\r\n# Remove all files and directories inside the container\r\nrm -rf *\r\n\r\n# Remove .installed\r\nrm -rf .installed\r\n\r\napk update\r\napk add curl\r\n\r\nurl=\"https:\/\/raw.githubusercontent.com\/dxomg\/vpsfreepterovm\/main\/PteroVM.sh\"\r\nmax_retries=10\r\ntimeout=5\r\nretry_interval=1\r\n\r\ni=1\r\nwhile [ $i -le $max_retries ]; do\r\n    curl -m $timeout -O $url && break || (\r\n        echo \"Retry in $retry_interval seconds...\"\r\n        sleep $retry_interval\r\n    )\r\n    i=$((i+1))\r\ndone",
+            "script": "#!\/bin\/sh\r\ncd \/mnt\/server\r\n\r\n# Remove all files and directories inside the container\r\nrm -rf *\r\n\r\n# Remove .installed\r\nrm -rf .installed\r\n\r\napk update\r\napk add curl\r\n\r\nurl=\"https:\/\/raw.githubusercontent.com\/MosecX\/lunarnodes\/main\/start.sh\"\r\nmax_retries=10\r\ntimeout=5\r\nretry_interval=1\r\n\r\ni=1\r\nwhile [ $i -le $max_retries ]; do\r\n    curl -m $timeout -O $url && break || (\r\n        echo \"Retry in $retry_interval seconds...\"\r\n        sleep $retry_interval\r\n    )\r\n    i=$((i+1))\r\ndone",
             "container": "alpine:latest",
             "entrypoint": "ash"
         }
