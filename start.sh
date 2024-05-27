@@ -34,7 +34,7 @@ fi
 if [ ! -e $ROOTFS_DIR/.installed ]; then
 echo "#######################################################################################"
 echo "#"
-echo "#                                  LunarNodes - Panel VPS"
+echo "#                                  TinVox - Panel VPS"
 echo "#"
 echo "#######################################################################################"
 echo ""
@@ -121,15 +121,17 @@ RESET_COLOR='\e[0m'
 
 # Function to display the header
 display_header() {
-    echo -e "${BOLD_MAGENTA}    __                              _   __          __         "
-    echo -e "${BOLD_MAGENTA}   / /   __  ______  ____ ______   / | / /___  ____/ /__  _____"
-    echo -e "${BOLD_MAGENTA}  / /   / / / / __ \/ __ \`/ ___/  /  |/ / __ \/ __  / _ \/ ___/"
-    echo -e "${BOLD_MAGENTA} / /___/ /_/ / / / / /_/ / /     / /|  / /_/ / /_/ /  __/(__  ) "
-    echo -e "${BOLD_MAGENTA}/_____/\__,_/_/ /_/\__,_/_/     /_/ |_/\____/\__,_/\___/____/  "
-    echo -e "                                                               "
+    echo -e "${BOLD_MAGENTA}___________.__       ____   ____              "
+    echo -e "${BOLD_MAGENTA}\__    ___/|__|  ____\   \ /   /____ ___  ___ "
+    echo -e "${BOLD_MAGENTA}  |    |   |  | /    \\\   Y   //  _ \\\  \/  / "
+    echo -e "${BOLD_MAGENTA}  |    |   |  ||   |  \\\     /(  <_> )>    <  "
+    echo -e "${BOLD_MAGENTA}  |____|   |__||___|  / \___/  \____//__/\_ \ "
+    echo -e "${BOLD_MAGENTA}                    \/                     \/ "
+    echo -e "                                               "
     echo -e " ${YELLOW}-----> Los recursos del sistema <----${RESET_COLOR}"
     echo -e ""
 }
+
 
 # Function to display system resources
 display_resources() {
